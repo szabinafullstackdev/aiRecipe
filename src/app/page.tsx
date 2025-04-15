@@ -62,7 +62,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-background p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-8">
+      <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
+        Welcome to RecipeAI
+      </h1>      <p className="text-base md:text-lg text-center mb-8">This application allows you to generate recipes based on your preferences. Simply enter what you'd like to eat in the search bar, and we'll take care of the rest!</p>
       <h1 className="text-2xl font-bold mb-4">RecipeAI</h1>
       <div className="flex w-full max-w-md space-x-2 mb-6">
         <Input
@@ -75,7 +78,6 @@ export default function Home() {
           {isLoading ? 'Loading...' : 'Generate Recipes'}
         </Button>
       </div>
-
       {isLoading ? (
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {[...Array(3)].map((_, i) => (
