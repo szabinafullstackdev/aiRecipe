@@ -1,4 +1,4 @@
-# Firebase Studio
+
 
 **[Live RecipeAI Application](https://firebase-studio-kappa.vercel.app/)**
 
@@ -8,8 +8,5 @@ This is a NextJS starter in Firebase Studio.
 
 To get started, take a look at src/app/page.tsx.
 
-## How to run locally
-
-To run the application locally, use the following command:
 
 
