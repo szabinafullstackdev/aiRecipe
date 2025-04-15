@@ -45,10 +45,10 @@ export default function Home() {
     try {
       const result: GenerateRecipesOutput = await generateRecipes({description});
 
-      if (result && result.recipes) {
+      if (result?.recipes) {
         // Check if result.recipes is not null and is an array
         setRecipes(result.recipes as Recipe[]);
-      } else {
+      } else if(result){
         // Handle the case where result or result.recipes is null/undefined
         console.error('No recipes received from AI generation');
         setRecipes([]); // Set recipes to an empty array to avoid rendering issues
@@ -102,23 +102,23 @@ export default function Home() {
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {recipes.map((recipe, index) => (
             <Card key={index} className="bg-card text-card-foreground shadow-md rounded-lg overflow-hidden">
-              <CardHeader className="p-4">
-                <CardTitle className="text-lg font-semibold">{recipe.title}</CardTitle>
+              <CardHeader className="p-4" >
+                <CardTitle className="text-lg font-semibold">{recipe?.title}</CardTitle>
               </CardHeader>
               <CardContent className="p-4">
                 <h2 className="text-md font-semibold mb-2">Ingredients:</h2>
                 <ul className="list-disc list-inside mb-2">
-                  {recipe.ingredients.map((ingredient, i) => (
+                  {recipe?.ingredients?.map((ingredient, i) => (
                     <li key={i}>{ingredient}</li>
                   ))}
                 </ul>
                 <h2 className="text-md font-semibold mb-2">Instructions:</h2>
-                <p className="text-sm">{recipe.instructions}</p>
+                <p className="text-sm">{recipe?.instructions}</p>
               </CardContent>
               <div className="p-4 flex justify-end">
                 <Button
                   variant="ghost"
-                  size="icon"
+                  size="icon"                 
                   onClick={() => toggleFavorite(recipe.title)}
                 >
                   {favorites.includes(recipe.title) ? (
