@@ -1,10 +1,12 @@
 # Firebase Studio
 
+**[Live RecipeAI Application](https://firebase-studio-kappa.vercel.app/)**
+
+This link will take you to the live RecipeAI application, where you can use the AI search bar to generate recipes.
+
 This is a NextJS starter in Firebase Studio.
 
 To get started, take a look at src/app/page.tsx.
-
-You can see the [Live Application](https://firebase-studio-kappa.vercel.app/).
 
 ## How to run locally
 
